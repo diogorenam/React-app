@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import './App.css'
-import Tasks from "./components/Tasks";
-import AddTask from './components/AddTask'
+import Tasks from './components/Tarefas/Tasks'
+import AddTask from './components/AdicionarTarefas/AddTask'
 const App = ()=>{
 //o metodo useState é usado para poder atualizar uma informação 
- const [tasks, setslks] = useState([
+ const [tasks] = useState([
   {
     id: "1",
     title: "Estudar programação",
