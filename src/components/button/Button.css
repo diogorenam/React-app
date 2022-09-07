@@ -1,0 +1,12 @@
+.add-button{
+    background-color: chartreuse;
+    height: 40px;
+    width: 100%;
+    border-radius: 5px;
+    padding: 0 10px;
+    font-size: 15px;
+    color: #444;
+    font-weight: bold;
+    cursor: pointer;
+    border:none;
+}
