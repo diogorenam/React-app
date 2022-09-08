@@ -1,12 +1,20 @@
-import React from "react";
+import React,  { useState } from "react";
 import "./AddTask.css"
 import Button from "../button/Button";
-const AddTask = () => {
-    return ( 
+const AddTask = ({handleTaskAdition}) => {
+    const [inputDate, setInputDate] = useState('')
+    const handIputChange = (e) =>{
+        setInputDate(e.target.value)//pegando a String digitada pelo usuario
+        
+    }
+    const handleTaskClick = () =>{
+        handleTaskAdition(inputDate);
+    }
+    return( 
         <div className="add-task-container">
-            <input className="add-task-input" type="text" />
+            <input onChange={handIputChange} value={inputDate} className="add-task-input" type="text" />
             <div className="add-task-button-container">
-            <Button>Adicionar</Button>
+            <Button onClick={handleTaskClick}>Adicionar</Button>
 
             </div>
         </div>

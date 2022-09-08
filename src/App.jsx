@@ -4,7 +4,7 @@ import Tasks from './components/Tarefas/Tasks'
 import AddTask from './components/AdicionarTarefas/AddTask'
 const App = ()=>{
 //o metodo useState é usado para poder atualizar uma informação 
- const [tasks] = useState([
+ const [tasks,setTasks] = useState([
   {
     id: "1",
     title: "Estudar programação",
@@ -22,10 +22,19 @@ const App = ()=>{
   },
   
  ]);
+
+ const handleTaskAdition = (taskTitle) =>{
+    const newTasks = [...tasks,{
+      title: taskTitle,
+      id: Math.random(10),
+      completed: false,
+    }]
+    setTasks(newTasks);
+ }
   return (
     <>
       <div className="container">
-        <AddTask/>
+        <AddTask handleTaskAdition = {handleTaskAdition}/>
       <Tasks tasks={tasks}/>
     </div>
    
