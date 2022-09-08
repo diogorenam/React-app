@@ -1,8 +1,12 @@
 import React, { useState } from "react";
-import './App.css'
-import {v4 as uuidv4} from 'uuid'
-import Tasks from './components/Tarefas/Tasks'
-import AddTask from './components/AdicionarTarefas/AddTask'
+import {v4 as uuidv4} from 'uuid';
+
+import Tasks from './components/Tarefas/Tasks';
+import AddTask from './components/AdicionarTarefas/AddTask';
+import Header from "./components/Header/Header";
+
+import './App.css';
+
 const App = ()=>{
 //o metodo useState é usado para poder atualizar uma informação 
  const [tasks,setTasks] = useState([
@@ -23,7 +27,7 @@ const App = ()=>{
   },
   
  ]);
-//Adicionar uma nova task 
+ //Adicionar uma nova task 
  const handleTaskAdition = (taskTitle) =>{
     const newTasks = [...tasks,{
       title: taskTitle,
@@ -32,7 +36,15 @@ const App = ()=>{
     }]
     setTasks(newTasks);
  }
-//Marcar com verde as taks concluidas 
+
+ // remove task 
+ const handleRemoveTask = (taskId) =>{
+  const newTasks = tasks.filter(task => task.id !== taskId)
+    setTasks(newTasks);
+ }
+   
+  
+ //Marcar com verde as taks concluidas 
  const handleTaskClick = (taskId) =>{
     const newTasks = tasks.map((task) => {
       if(task.id === taskId) return {...task, completed: !task.completed};
@@ -45,14 +57,15 @@ const App = ()=>{
   return (
     <>
       <div className="container">
+        <Header/>
         <AddTask handleTaskAdition = {handleTaskAdition} />
-      <Tasks tasks={tasks} handleTaskClick ={handleTaskClick}/>
+      <Tasks tasks={tasks} handleTaskClick ={handleTaskClick} handleRemoveTask={handleRemoveTask}  />
     </div>
    
     </>
 
   ) 
-
+  
 }
 
 export default App;
