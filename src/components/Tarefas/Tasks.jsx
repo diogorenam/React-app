@@ -3,10 +3,11 @@ import Task from "./Task";
 
 
 
-const Tasks = ({tasks}) =>{
+const Tasks = ({tasks,handleTaskClick}) =>{
     return (
         <>
-        {tasks.map(task => <Task task={task
+        {tasks.map(task => <Task 
+					 handleTaskClick={handleTaskClick} task={task
         } />)}
         </>
     )   

@@ -9,6 +9,7 @@ const AddTask = ({handleTaskAdition}) => {
     }
     const handleTaskClick = () =>{
         handleTaskAdition(inputDate);
+        setInputDate('');
     }
     return( 
         <div className="add-task-container">

@@ -9,3 +9,6 @@
     color:#fff;
     font-weight: 800;
 }
+.task-title{
+    cursor:pointer;
+}
