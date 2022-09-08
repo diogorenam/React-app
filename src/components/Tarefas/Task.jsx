@@ -6,6 +6,9 @@ const Task = ({task,handleTaskClick}) => {
             <div className='task-title' onClick={() => handleTaskClick(task.id)}>
             {task.title}
             </div>
+            <div className="buttons-container"> 
+                <button className= "remove-task-button">X</button>
+            </div>
         </div>
 
     )

@@ -23,7 +23,7 @@ const App = ()=>{
   },
   
  ]);
-
+//Adicionar uma nova task 
  const handleTaskAdition = (taskTitle) =>{
     const newTasks = [...tasks,{
       title: taskTitle,
@@ -32,7 +32,7 @@ const App = ()=>{
     }]
     setTasks(newTasks);
  }
-
+//Marcar com verde as taks concluidas 
  const handleTaskClick = (taskId) =>{
     const newTasks = tasks.map((task) => {
       if(task.id === taskId) return {...task, completed: !task.completed};
@@ -41,6 +41,7 @@ const App = ()=>{
     setTasks(newTasks);
    
  }
+ //retornar as tasks
   return (
     <>
       <div className="container">
