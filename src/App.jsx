@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import Tasks from "./components/Tarefas/Tasks";
 import AddTask from "./components/AdicionarTarefas/AddTask";
 import Header from "./components/Header/Header";
+import taskDetails from "./components/detalhes/taskDetails"
 
 import "./App.css";
 
@@ -73,9 +74,8 @@ const App = () => {
               />
             </>
           )}
-
         />
-       
+       <Route path="/:tasktitle" exact component={taskDetails}/>
       </div>
     </Router>
   );
